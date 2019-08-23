@@ -24,9 +24,11 @@
     }
     window.addEventListener('mousemove', draw)
     window.addEventListener('mouseup', () => {
+      if (points.length >= 10) {
+        runAnimation($path.getAttribute('d'))
+        console.log($path.getAttribute('d'))
+      }
       points.length = 0
-      runAnimation($path.getAttribute('d'))
-      console.log($path.getAttribute('d'))
       window.removeEventListener('mousemove', draw)
     })
   })
